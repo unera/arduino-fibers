@@ -467,8 +467,10 @@ light_control(void)
 
 ### Ссылки
 
-1. [Библиотека fiber](https://github.com/unera/arduino-fibers/)
-2. [Эта статья в Git](https://github.com/unera/arduino-fibers/blob/master/articles/ru/article1.md)
-3. [Библиотека Thread, в тексте статьи](https://github.com/ivanseidel/ArduinoThread)
-4. [Многозадачность в терминах википедии](https://ru.wikipedia.org/wiki/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C)
-5. [Когда-то на HighLoad выступал о аналогичном но в "большом" мире](https://github.com/unera/presentations/blob/master/highload.pdf)
+1. [Библиотека fiber](https://github.com/unera/arduino-fibers/);
+2. [Эта статья в Git](https://github.com/unera/arduino-fibers/blob/master/articles/ru/article1.md);
+3. [Библиотека Thread, в тексте статьи](https://github.com/ivanseidel/ArduinoThread);
+4. [Многозадачность в терминах википедии](https://ru.wikipedia.org/wiki/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C);
+5. [Когда-то на HighLoad выступал о аналогичном но в "большом" мире](https://github.com/unera/presentations/blob/master/highload.pdf);
+6. [Node.JS](https://nodejs.org/en/).
+
