@@ -57,6 +57,7 @@ temperature_regulator(void) {
 uint16_t
 get_adc(uint8_t input)
 {
+	while (adc_is_busy());
 	adc_switch_mux(input);
 	adc_start();
 	while (adc_is_busy());
@@ -130,13 +131,17 @@ loop(void)
 
 ```c
 
-enum adc_state { FREE, BUSY } state;
+enum adc_state { FREE, BUSY, VERYBUSY } state = VERYBUSY;
 
 void
 temperature_regulator(void)
 {
 	uint16_t current_t;
 	switch(state) {
+		case VERYBUSY: 		// АЦП не нами занято
+			if (adc_is_busy())
+				return;
+			state = FREE;
 		case FREE:
 			adc_switch_mux(input);
 			adc_start();
@@ -250,6 +255,7 @@ loop() { ... }
 uint16_t
 get_adc(uint8_t input)
 {
+	while (adc_is_busy());
 	adc_switch_mux(input);
 	adc_start();
 	while (adc_is_busy());
@@ -264,6 +270,8 @@ get_adc(uint8_t input)
 uint16_t
 get_adc(uint8_t input)
 {
+	while (adc_is_busy())
+		cede();			// пока ждем - пусть другие работают
 	adc_switch_mux(input);
 	adc_start();
 	while (adc_is_busy())
