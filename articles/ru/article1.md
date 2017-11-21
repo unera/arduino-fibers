@@ -451,3 +451,10 @@ light_control(void)
 1. Пока не дооформил как библиотеку Arduino: не смог понять пока как заставить его компилировать C'шные файлы в стандарте C99 (даже заголовки avr-libc предполагают C99). Не хочу оформлять как C++ (потому что не только Arduino в планах);
 2. в большом мире есть `fiber_join`, так и не знаю стоит ли его реализовывать;
 
+
+### Ссылки
+
+1. [Библиотека fiber](https://github.com/unera/arduino-fibers/)
+2. [Эта статья в Git](https://github.com/unera/arduino-fibers/blob/master/articles/ru/article1.md)
+3. [Библиотека Thread, в тексте статьи](https://github.com/ivanseidel/ArduinoThread)
+4. [Многозадачность в терминах википедии](https://ru.wikipedia.org/wiki/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C)
