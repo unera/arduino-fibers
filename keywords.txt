@@ -1,0 +1,28 @@
+#######################################
+# Syntax Coloring Map fiber
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+fiber	KEYWORD1	fiber
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+fiber_current	KEYWORD2
+fiber_create	KEYWORD2
+fiber_cancel	KEYWORD2
+fibers_init	KEYWORD2
+
+fiber_cede	KEYWORD2
+fiber_schedule	KEYWORD2
+fiber_wakeup	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+FIBER_STACK_SIZE	KEYWORD2
