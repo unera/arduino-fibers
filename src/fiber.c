@@ -3,6 +3,7 @@
 #include <avr/io.h>
 #include <util/atomic.h>
 #include <string.h>
+#include <stddef.h>
 #include "list.h"
 
 enum fiber_state {
@@ -191,6 +192,29 @@ _fiber_switch(struct fiber *next, struct list_head *list)
 		// in the future
 		real_sreg	= sreg_save;
 
+		__asm__ __volatile__ (
+
+			"PUSH r2\n"
+			"PUSH r3\n"
+			"PUSH r4\n"
+			"PUSH r5\n"
+			"PUSH r6\n"
+			"PUSH r7\n"
+			"PUSH r8\n"
+			"PUSH r9\n"
+			"PUSH r10\n"
+			"PUSH r11\n"
+			"PUSH r12\n"
+			"PUSH r13\n"
+			"PUSH r14\n"
+			"PUSH r15\n"
+			"PUSH r16\n"
+			"PUSH r17\n"
+
+			"PUSH r28\n"
+			"PUSH r29\n"
+		);
+
 		/* switch stack! */
 		prev->sp = SP;
 		SP = next->sp;
@@ -200,6 +224,29 @@ _fiber_switch(struct fiber *next, struct list_head *list)
 			// don't return here
 			_fiber_run();
 		}
+
+		__asm__ __volatile__ (
+
+			"POP r29\n"
+			"POP r28\n"
+
+			"POP r17\n"
+			"POP r16\n"
+			"POP r15\n"
+			"POP r14\n"
+			"POP r13\n"
+			"POP r12\n"
+			"POP r11\n"
+			"POP r10\n"
+			"POP r9\n"
+			"POP r8\n"
+			"POP r7\n"
+			"POP r6\n"
+			"POP r5\n"
+			"POP r4\n"
+			"POP r3\n"
+			"POP r2\n"
+		);
 	}
 
 	// stack was switched, so SREG could be changed

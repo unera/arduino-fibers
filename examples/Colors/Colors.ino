@@ -1,7 +1,7 @@
 #include <avr/interrupt.h>
 #include <util/atomic.h>
 
-#define FIBER_STACK_SIZE	64
+#define FIBER_STACK_SIZE	80
 #include <fiber.h>
 
 
